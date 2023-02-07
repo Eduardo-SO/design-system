@@ -14,8 +14,8 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@izuka/ts-config": "*",
     "@izuka/eslint-config": "*",
+    "@izuka/ts-config": "*",
     "tsup": "^6.5.0",
     "typescript": "^4.9.4"
   }
