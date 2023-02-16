@@ -118,12 +118,142 @@ var {
   }
 });
 
-// src/components/Box.tsx
-var Box = styled("div", {
-  padding: "$4",
-  borderRadius: "$md",
-  backgroundColor: "$gray800",
-  border: "1px solid $gray600"
+// src/components/Heading.tsx
+var Heading = styled("h2", {
+  fontFamily: "$default",
+  lineHeight: "$shorter",
+  margin: 0,
+  color: "$gray100",
+  variants: {
+    size: {
+      sm: { fontSize: "xl" },
+      md: { fontSize: "2xl" },
+      lg: { fontSize: "4xl" },
+      "2xl": { fontSize: "5xl" },
+      "3xl": { fontSize: "6xl" },
+      "4xl": { fontSize: "7xl" },
+      "5xl": { fontSize: "8xl" },
+      "6xl": { fontSize: "9xl" }
+    }
+  },
+  defaultVariants: {
+    size: "md"
+  }
+});
+
+// src/components/Avatar/index.tsx
+import { User } from "phosphor-react";
+
+// src/components/Avatar/styles.ts
+import * as Avatar from "@radix-ui/react-avatar";
+var AvatarContainer = styled(Avatar.Root, {
+  display: "inline-block",
+  overflow: "hidden",
+  width: "$12",
+  height: "$12",
+  borderRadius: "$full"
+});
+var AvatarImage = styled(Avatar.Image, {
+  width: "100%",
+  height: "100%",
+  objectFit: "cover",
+  borderRadius: "inherit"
+});
+var AvatarFallback = styled(Avatar.Fallback, {
+  width: "100%",
+  height: "100%",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  backgroundColor: "$gray600",
+  color: "$gray800",
+  svg: {
+    width: "$6",
+    height: "$6"
+  }
+});
+
+// src/components/Avatar/index.tsx
+import { jsx, jsxs } from "react/jsx-runtime";
+function Avatar2(props) {
+  return /* @__PURE__ */ jsxs(AvatarContainer, { children: [
+    /* @__PURE__ */ jsx(AvatarImage, __spreadValues({}, props)),
+    /* @__PURE__ */ jsx(AvatarFallback, { delayMs: 600, children: /* @__PURE__ */ jsx(User, {}) })
+  ] });
+}
+
+// src/components/Button.tsx
+var Button = styled("button", {
+  all: "unset",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  gap: "$2",
+  boxSizing: "border-box",
+  minWidth: 128,
+  padding: "0 $4",
+  borderRadius: "$sm",
+  fontSize: "$sm",
+  fontWeight: "$medium",
+  fontFamily: "$default",
+  textAlign: "center",
+  cursor: "pointer",
+  "&:disabled": {
+    cursor: "not-allowed"
+  },
+  svg: {
+    width: "$4",
+    height: "$4"
+  },
+  variants: {
+    variant: {
+      primary: {
+        color: "$white",
+        background: "$izuka500",
+        "&:not(:disabled):hover": {
+          background: "$izuka300"
+        },
+        "&:disabled": {
+          backgroundColor: "$gray200"
+        }
+      },
+      secondary: {
+        color: "$izuka300",
+        border: "solid 2px $izuka500",
+        "&:not(:disabled):hover": {
+          background: "$izuka500",
+          color: "$white"
+        },
+        "&:disabled": {
+          color: "$gray200",
+          borderColor: "$gray200"
+        }
+      },
+      tertiary: {
+        color: "$gray100",
+        "&:not(:disabled):hover": {
+          background: "$izuka500",
+          color: "$white"
+        },
+        "&:disabled": {
+          color: "$gray600",
+          borderColor: "$gray200"
+        }
+      }
+    },
+    size: {
+      sm: {
+        height: 38
+      },
+      md: {
+        height: 46
+      }
+    }
+  },
+  defaultVariants: {
+    variant: "primary",
+    size: "md"
+  }
 });
 
 // src/components/Text.tsx
@@ -154,30 +284,17 @@ var Text = styled("p", {
   }
 });
 
-// src/components/Heading.tsx
-var Heading = styled("h2", {
-  fontFamily: "$default",
-  lineHeight: "$shorter",
-  margin: 0,
-  color: "$gray100",
-  variants: {
-    size: {
-      sm: { fontSize: "xl" },
-      md: { fontSize: "2xl" },
-      lg: { fontSize: "4xl" },
-      "2xl": { fontSize: "5xl" },
-      "3xl": { fontSize: "6xl" },
-      "4xl": { fontSize: "7xl" },
-      "5xl": { fontSize: "8xl" },
-      "6xl": { fontSize: "9xl" }
-    }
-  },
-  defaultVariants: {
-    size: "md"
-  }
+// src/components/Box.tsx
+var Box = styled("div", {
+  padding: "$4",
+  borderRadius: "$md",
+  backgroundColor: "$gray800",
+  border: "1px solid $gray600"
 });
 export {
+  Avatar2 as Avatar,
   Box,
+  Button,
   Heading,
   Text
 };
