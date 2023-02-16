@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { Text, TextProps } from '@izuka/react'
 
 export default {
-  title: 'Typografy/Text',
+  title: 'Typography/Text',
   component: Text,
   args: {
     children:
