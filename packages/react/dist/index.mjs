@@ -17,6 +17,18 @@ var __spreadValues = (a, b) => {
   return a;
 };
 var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
+var __objRest = (source, exclude) => {
+  var target = {};
+  for (var prop in source)
+    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)
+      target[prop] = source[prop];
+  if (source != null && __getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(source)) {
+      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))
+        target[prop] = source[prop];
+    }
+  return target;
+};
 
 // ../tokens/dist/index.mjs
 var colors = {
@@ -118,6 +130,58 @@ var {
   }
 });
 
+// src/components/TextInput/styles.ts
+var TextInputContainer = styled("div", {
+  display: "flex",
+  alignItems: "baseline",
+  padding: "$3 $4",
+  border: "2px solid $gray900",
+  borderRadius: "$sm",
+  boxSizing: "border-box",
+  backgroundColor: "$gray900",
+  "&:has(input:focus)": {
+    borderColor: "$izuka300"
+  },
+  "&:has(input:disabled)": {
+    opacity: 0.5,
+    cursor: "not-allowed"
+  }
+});
+var Prefix = styled("span", {
+  color: "$gray400",
+  fontFamily: "$default",
+  fontSize: "$sm",
+  fontWeight: "$regular"
+});
+var Input = styled("input", {
+  width: "100%",
+  border: 0,
+  backgroundColor: "transparent",
+  color: "$white",
+  fontFamily: "$default",
+  fontSize: "$sm",
+  fontWeight: "$regular",
+  "&:focus": {
+    outline: 0
+  },
+  "&:disabled": {
+    cursor: "not-allowed"
+  },
+  "&:placeholder": {
+    color: "$gray400"
+  }
+});
+
+// src/components/TextInput/index.tsx
+import { jsx, jsxs } from "react/jsx-runtime";
+function TextInput(_a) {
+  var _b = _a, { prefix } = _b, props = __objRest(_b, ["prefix"]);
+  return /* @__PURE__ */ jsxs(TextInputContainer, { children: [
+    !!prefix && /* @__PURE__ */ jsx(Prefix, { children: prefix }),
+    /* @__PURE__ */ jsx(Input, __spreadValues({}, props))
+  ] });
+}
+
 // src/components/Heading.tsx
 var Heading = styled("h2", {
   fontFamily: "$default",
@@ -174,11 +238,11 @@ var AvatarFallback = styled(Avatar.Fallback, {
 });
 
 // src/components/Avatar/index.tsx
-import { jsx, jsxs } from "react/jsx-runtime";
+import { jsx as jsx2, jsxs as jsxs2 } from "react/jsx-runtime";
 function Avatar2(props) {
-  return /* @__PURE__ */ jsxs(AvatarContainer, { children: [
-    /* @__PURE__ */ jsx(AvatarImage, __spreadValues({}, props)),
-    /* @__PURE__ */ jsx(AvatarFallback, { delayMs: 600, children: /* @__PURE__ */ jsx(User, {}) })
+  return /* @__PURE__ */ jsxs2(AvatarContainer, { children: [
+    /* @__PURE__ */ jsx2(AvatarImage, __spreadValues({}, props)),
+    /* @__PURE__ */ jsx2(AvatarFallback, { delayMs: 600, children: /* @__PURE__ */ jsx2(User, {}) })
   ] });
 }
 
@@ -296,5 +360,6 @@ export {
   Box,
   Button,
   Heading,
-  Text
+  Text,
+  TextInput
 };
