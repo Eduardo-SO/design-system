@@ -208,6 +208,70 @@ var TextArea = styled("textarea", {
   }
 });
 
+// src/components/Checkbox/index.tsx
+import { Check } from "phosphor-react";
+
+// src/components/Checkbox/styles.ts
+import * as Checkbox from "@radix-ui/react-checkbox";
+var CheckboxContainer = styled(Checkbox.Root, {
+  all: "unset",
+  boxSizing: "border-box",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  width: "$6",
+  height: "$6",
+  backgroundColor: "$gray900",
+  border: "2px solid $gray900",
+  borderRadius: "$xs",
+  lineHeight: 0,
+  overflow: "hidden",
+  cursor: "pointer",
+  '&[data-state="checked"]': {
+    backgroundColor: "$izuka300"
+  },
+  "&:focus": {
+    border: "2px solid $izuka300"
+  },
+  "&:disabled": {
+    cursor: "not-allowed"
+  }
+});
+var slideIn = keyframes({
+  from: {
+    transform: "translateY(-100%)"
+  },
+  to: {
+    transform: "translateY(0)"
+  }
+});
+var slideOut = keyframes({
+  from: {
+    transform: "translateY(0)"
+  },
+  to: {
+    transform: "translateY(-100%)"
+  }
+});
+var CheckboxIndicator = styled(Checkbox.Indicator, {
+  width: "$4",
+  height: "$4",
+  color: "$white",
+  '&[data-state="checked"]': {
+    animation: `${slideIn} 200ms ease-out`
+  },
+  '&[data-state="unchecked"]': {
+    animation: `${slideOut} 200ms ease-out`
+  }
+});
+
+// src/components/Checkbox/index.tsx
+import { jsx as jsx2 } from "react/jsx-runtime";
+function Checkbox2(_a) {
+  var props = __objRest(_a, []);
+  return /* @__PURE__ */ jsx2(CheckboxContainer, __spreadProps(__spreadValues({}, props), { children: /* @__PURE__ */ jsx2(CheckboxIndicator, { asChild: true, children: /* @__PURE__ */ jsx2(Check, { weight: "bold" }) }) }));
+}
+
 // src/components/Heading.tsx
 var Heading = styled("h2", {
   fontFamily: "$default",
@@ -264,11 +328,11 @@ var AvatarFallback = styled(Avatar.Fallback, {
 });
 
 // src/components/Avatar/index.tsx
-import { jsx as jsx2, jsxs as jsxs2 } from "react/jsx-runtime";
+import { jsx as jsx3, jsxs as jsxs2 } from "react/jsx-runtime";
 function Avatar2(props) {
   return /* @__PURE__ */ jsxs2(AvatarContainer, { children: [
-    /* @__PURE__ */ jsx2(AvatarImage, __spreadValues({}, props)),
-    /* @__PURE__ */ jsx2(AvatarFallback, { delayMs: 600, children: /* @__PURE__ */ jsx2(User, {}) })
+    /* @__PURE__ */ jsx3(AvatarImage, __spreadValues({}, props)),
+    /* @__PURE__ */ jsx3(AvatarFallback, { delayMs: 600, children: /* @__PURE__ */ jsx3(User, {}) })
   ] });
 }
 
@@ -385,6 +449,7 @@ export {
   Avatar2 as Avatar,
   Box,
   Button,
+  Checkbox2 as Checkbox,
   Heading,
   Text,
   TextArea,
