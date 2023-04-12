@@ -4,7 +4,16 @@ import { Box, Text, TextArea, TextAreaProps } from '@izuka/react'
 export default {
   title: 'Form/Text Area',
   component: TextArea,
-  args: {},
+  args: {
+    disabled: false,
+  },
+  argTypes: {
+    disabled: {
+      control: {
+        type: 'boolean',
+      },
+    },
+  },
   decorators: [
     (Story) => {
       return (

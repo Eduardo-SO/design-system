@@ -139,18 +139,18 @@ var Text = styled("p", {
   variants: {
     size: {
       xxs: { fontSize: "$xxs" },
-      xs: { fontSize: "xs" },
-      sm: { fontSize: "sm" },
-      md: { fontSize: "md" },
-      lg: { fontSize: "lg" },
-      xl: { fontSize: "xl" },
-      "2xl": { fontSize: "2xl" },
-      "4xl": { fontSize: "4xl" },
-      "5xl": { fontSize: "5xl" },
-      "6xl": { fontSize: "6xl" },
-      "7xl": { fontSize: "7xl" },
-      "9xl": { fontSize: "8xl" },
-      "8xl": { fontSize: "9xl" }
+      xs: { fontSize: "$xs" },
+      sm: { fontSize: "$sm" },
+      md: { fontSize: "$md" },
+      lg: { fontSize: "$lg" },
+      xl: { fontSize: "$xl" },
+      "2xl": { fontSize: "$2xl" },
+      "4xl": { fontSize: "$4xl" },
+      "5xl": { fontSize: "$5xl" },
+      "6xl": { fontSize: "$6xl" },
+      "7xl": { fontSize: "$7xl" },
+      "8xl": { fontSize: "$8xl" },
+      "9xl": { fontSize: "$9xl" }
     }
   },
   defaultVariants: {
@@ -354,14 +354,14 @@ var Heading = styled("h2", {
   color: "$gray100",
   variants: {
     size: {
-      sm: { fontSize: "xl" },
-      md: { fontSize: "2xl" },
-      lg: { fontSize: "4xl" },
-      "2xl": { fontSize: "5xl" },
-      "3xl": { fontSize: "6xl" },
-      "4xl": { fontSize: "7xl" },
-      "5xl": { fontSize: "8xl" },
-      "6xl": { fontSize: "9xl" }
+      sm: { fontSize: "$xl" },
+      md: { fontSize: "$2xl" },
+      lg: { fontSize: "$4xl" },
+      "2xl": { fontSize: "$5xl" },
+      "3xl": { fontSize: "$6xl" },
+      "4xl": { fontSize: "$7xl" },
+      "5xl": { fontSize: "$8xl" },
+      "6xl": { fontSize: "$9xl" }
     }
   },
   defaultVariants: {
