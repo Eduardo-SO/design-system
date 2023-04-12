@@ -157,6 +157,7 @@ var Text = styled("p", {
     size: "md"
   }
 });
+Text.displayName = "Text";
 
 // src/components/MultiStep/styles.ts
 var MultiStepContainer = styled("div", {});
@@ -198,6 +199,7 @@ function MultiStep({ size, currentStep = 1 }) {
     /* @__PURE__ */ jsx(Steps, { css: { "--steps-size": size }, children: Array.from({ length: size }, (_, index) => index + 1).map((step) => /* @__PURE__ */ jsx(Step, { active: currentStep >= step }, step)) })
   ] });
 }
+MultiStep.displayName = "MultiStep";
 
 // src/components/TextInput/styles.ts
 var TextInputContainer = styled("div", {
@@ -250,6 +252,7 @@ function TextInput(_a) {
     /* @__PURE__ */ jsx2(Input, __spreadValues({}, props))
   ] });
 }
+TextInput.displayName = "TextInput";
 
 // src/components/TextArea.tsx
 var TextArea = styled("textarea", {
@@ -276,6 +279,7 @@ var TextArea = styled("textarea", {
     color: "$gray400"
   }
 });
+TextArea.displayName = "TextArea";
 
 // src/components/Checkbox/index.tsx
 import { Check } from "phosphor-react";
@@ -340,6 +344,7 @@ function Checkbox2(_a) {
   var props = __objRest(_a, []);
   return /* @__PURE__ */ jsx3(CheckboxContainer, __spreadProps(__spreadValues({}, props), { children: /* @__PURE__ */ jsx3(CheckboxIndicator, { asChild: true, children: /* @__PURE__ */ jsx3(Check, { weight: "bold" }) }) }));
 }
+Checkbox2.displayName = "Checkbox";
 
 // src/components/Heading.tsx
 var Heading = styled("h2", {
@@ -363,6 +368,7 @@ var Heading = styled("h2", {
     size: "md"
   }
 });
+Heading.displayName = "Button";
 
 // src/components/Avatar/index.tsx
 import { User } from "phosphor-react";
@@ -404,6 +410,7 @@ function Avatar2(props) {
     /* @__PURE__ */ jsx4(AvatarFallback, { delayMs: 600, children: /* @__PURE__ */ jsx4(User, {}) })
   ] });
 }
+Avatar2.displayName = "Avatar";
 
 // src/components/Button.tsx
 var Button = styled("button", {
@@ -478,6 +485,7 @@ var Button = styled("button", {
     size: "md"
   }
 });
+Button.displayName = "Button";
 
 // src/components/Box.tsx
 var Box = styled("div", {
@@ -486,6 +494,7 @@ var Box = styled("div", {
   backgroundColor: "$gray800",
   border: "1px solid $gray600"
 });
+Box.displayName = "Box";
 export {
   Avatar2 as Avatar,
   Box,
