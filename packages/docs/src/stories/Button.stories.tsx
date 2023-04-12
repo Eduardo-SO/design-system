@@ -5,13 +5,17 @@ import { Button, ButtonProps } from '@izuka/react'
 export default {
   title: 'Form/Button',
   component: Button,
-} as Meta<ButtonProps>
-
-export const Primary: StoryObj<ButtonProps> = {
   args: {
     children: 'Salvar',
   },
-}
+  argTypes: {
+    onClick: {
+      action: 'click',
+    },
+  },
+} as Meta<ButtonProps>
+
+export const Primary: StoryObj<ButtonProps> = {}
 
 export const Secondary: StoryObj<ButtonProps> = {
   args: {
