@@ -5,6 +5,12 @@ import * as _stitches_react_types_css_util from '@stitches/react/types/css-util'
 import * as Checkbox$1 from '@radix-ui/react-checkbox';
 import * as Avatar$1 from '@radix-ui/react-avatar';
 
+interface MultiStepProps {
+    size: number;
+    currentStep?: number;
+}
+declare function MultiStep({ size, currentStep }: MultiStepProps): JSX.Element;
+
 declare const Input: _stitches_react_types_styled_component.StyledComponent<"input", {}, {}, _stitches_react_types_css_util.CSS<{}, {
     colors: {
         white: string;
@@ -1663,4 +1669,4 @@ interface BoxProps extends ComponentProps<typeof Box> {
     as?: ElementType;
 }
 
-export { Avatar, AvatarProps, Box, BoxProps, Button, ButtonProps, Checkbox, CheckboxProps, Heading, HeadingProps, Text, TextArea, TextAreaProps, TextInput, TextInputProps, TextProps };
+export { Avatar, AvatarProps, Box, BoxProps, Button, ButtonProps, Checkbox, CheckboxProps, Heading, HeadingProps, MultiStep, MultiStepProps, Text, TextArea, TextAreaProps, TextInput, TextInputProps, TextProps };

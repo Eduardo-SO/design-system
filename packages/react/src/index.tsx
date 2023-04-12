@@ -1,3 +1,4 @@
+export * from './components/MultiStep'
 export * from './components/TextInput'
 export * from './components/TextArea'
 export * from './components/Checkbox'

@@ -60,6 +60,7 @@ __export(src_exports, {
   Button: () => Button,
   Checkbox: () => Checkbox2,
   Heading: () => Heading,
+  MultiStep: () => MultiStep,
   Text: () => Text,
   TextArea: () => TextArea,
   TextInput: () => TextInput
@@ -166,6 +167,75 @@ var {
   }
 });
 
+// src/components/Text.tsx
+var Text = styled("p", {
+  fontFamily: "$default",
+  lineHeight: "$base",
+  margin: 0,
+  color: "$gray100",
+  variants: {
+    size: {
+      xxs: { fontSize: "$xxs" },
+      xs: { fontSize: "xs" },
+      sm: { fontSize: "sm" },
+      md: { fontSize: "md" },
+      lg: { fontSize: "lg" },
+      xl: { fontSize: "xl" },
+      "2xl": { fontSize: "2xl" },
+      "4xl": { fontSize: "4xl" },
+      "5xl": { fontSize: "5xl" },
+      "6xl": { fontSize: "6xl" },
+      "7xl": { fontSize: "7xl" },
+      "9xl": { fontSize: "8xl" },
+      "8xl": { fontSize: "9xl" }
+    }
+  },
+  defaultVariants: {
+    size: "md"
+  }
+});
+
+// src/components/MultiStep/styles.ts
+var MultiStepContainer = styled("div", {});
+var Label = styled(Text, {
+  color: "$gray200",
+  defaultVariants: {
+    size: "xs"
+  }
+});
+var Steps = styled("div", {
+  display: "grid",
+  gap: "$2",
+  marginTop: "$1",
+  gridTemplateColumns: "repeat(var(--steps-size), 1fr)"
+});
+var Step = styled("div", {
+  height: "$1",
+  borderRadius: "$px",
+  backgroundColor: "$gray600",
+  variants: {
+    active: {
+      true: {
+        backgroundColor: "$gray100"
+      }
+    }
+  }
+});
+
+// src/components/MultiStep/index.tsx
+var import_jsx_runtime = require("react/jsx-runtime");
+function MultiStep({ size, currentStep = 1 }) {
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(MultiStepContainer, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Label, { children: [
+      "Passo ",
+      currentStep,
+      " de ",
+      size
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Steps, { css: { "--steps-size": size }, children: Array.from({ length: size }, (_, index) => index + 1).map((step) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Step, { active: currentStep >= step }, step)) })
+  ] });
+}
+
 // src/components/TextInput/styles.ts
 var TextInputContainer = styled("div", {
   display: "flex",
@@ -209,12 +279,12 @@ var Input = styled("input", {
 });
 
 // src/components/TextInput/index.tsx
-var import_jsx_runtime = require("react/jsx-runtime");
+var import_jsx_runtime2 = require("react/jsx-runtime");
 function TextInput(_a) {
   var _b = _a, { prefix } = _b, props = __objRest(_b, ["prefix"]);
-  return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(TextInputContainer, { children: [
-    !!prefix && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Prefix, { children: prefix }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, __spreadValues({}, props))
+  return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(TextInputContainer, { children: [
+    !!prefix && /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Prefix, { children: prefix }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Input, __spreadValues({}, props))
   ] });
 }
 
@@ -302,10 +372,10 @@ var CheckboxIndicator = styled(Checkbox.Indicator, {
 });
 
 // src/components/Checkbox/index.tsx
-var import_jsx_runtime2 = require("react/jsx-runtime");
+var import_jsx_runtime3 = require("react/jsx-runtime");
 function Checkbox2(_a) {
   var props = __objRest(_a, []);
-  return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(CheckboxContainer, __spreadProps(__spreadValues({}, props), { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(CheckboxIndicator, { asChild: true, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_phosphor_react.Check, { weight: "bold" }) }) }));
+  return /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(CheckboxContainer, __spreadProps(__spreadValues({}, props), { children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(CheckboxIndicator, { asChild: true, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_phosphor_react.Check, { weight: "bold" }) }) }));
 }
 
 // src/components/Heading.tsx
@@ -364,11 +434,11 @@ var AvatarFallback = styled(Avatar.Fallback, {
 });
 
 // src/components/Avatar/index.tsx
-var import_jsx_runtime3 = require("react/jsx-runtime");
+var import_jsx_runtime4 = require("react/jsx-runtime");
 function Avatar2(props) {
-  return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(AvatarContainer, { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(AvatarImage, __spreadValues({}, props)),
-    /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(AvatarFallback, { delayMs: 600, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_phosphor_react2.User, {}) })
+  return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(AvatarContainer, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(AvatarImage, __spreadValues({}, props)),
+    /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(AvatarFallback, { delayMs: 600, children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(import_phosphor_react2.User, {}) })
   ] });
 }
 
@@ -446,34 +516,6 @@ var Button = styled("button", {
   }
 });
 
-// src/components/Text.tsx
-var Text = styled("p", {
-  fontFamily: "$default",
-  lineHeight: "$base",
-  margin: 0,
-  color: "$gray100",
-  variants: {
-    size: {
-      xxs: { fontSize: "$xxs" },
-      xs: { fontSize: "xs" },
-      sm: { fontSize: "sm" },
-      md: { fontSize: "md" },
-      lg: { fontSize: "lg" },
-      xl: { fontSize: "xl" },
-      "2xl": { fontSize: "2xl" },
-      "4xl": { fontSize: "4xl" },
-      "5xl": { fontSize: "5xl" },
-      "6xl": { fontSize: "6xl" },
-      "7xl": { fontSize: "7xl" },
-      "9xl": { fontSize: "8xl" },
-      "8xl": { fontSize: "9xl" }
-    }
-  },
-  defaultVariants: {
-    size: "md"
-  }
-});
-
 // src/components/Box.tsx
 var Box = styled("div", {
   padding: "$4",
@@ -488,6 +530,7 @@ var Box = styled("div", {
   Button,
   Checkbox,
   Heading,
+  MultiStep,
   Text,
   TextArea,
   TextInput
