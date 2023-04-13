@@ -13,6 +13,7 @@ declare const colors: {
     izuka500: string;
     izuka700: string;
     izuka900: string;
+    test: string;
 };
 
 declare const space: {

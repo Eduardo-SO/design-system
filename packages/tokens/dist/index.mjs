@@ -13,7 +13,8 @@ var colors = {
   izuka300: "#90e0ef",
   izuka500: "#48cae4",
   izuka700: "#00b4d8",
-  izuka900: "#0096c7"
+  izuka900: "#0096c7",
+  test: "#FFF"
 };
 
 // src/space.ts
