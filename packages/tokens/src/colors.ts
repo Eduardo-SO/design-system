@@ -15,4 +15,6 @@ export const colors = {
   izuka500: '#48cae4',
   izuka700: '#00b4d8',
   izuka900: '#0096c7',
+
+  test: '#FFF',
 }
