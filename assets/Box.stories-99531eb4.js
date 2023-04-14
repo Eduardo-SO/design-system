@@ -1,0 +1,2 @@
+import{B as r,T as o}from"./index-e6aa789c.js";import{j as t}from"./jsx-runtime-310bfdac.js";import"./index-39d17dc8.js";import"./es.object.get-own-property-descriptor-037fa860.js";import"./index-f97499ea.js";const n={title:"Surfaces/Box",component:r,args:{children:t(o,{children:"Lorem ipsum dolor sit, amet consectetur adipisicing elit."})},argTypes:{children:{control:{type:null}}}},c={},p=["Primary"];export{c as Primary,p as __namedExportsOrder,n as default};
+//# sourceMappingURL=Box.stories-99531eb4.js.map
